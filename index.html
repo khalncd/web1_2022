@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accueil</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-primary" onclick="appendItem()">Add +</button>
+        <div id="header" class="m-2" style="border: black solid 2px;">
+        </div>
+        <input type="hidden" name="nbr" value="0">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    function appendItem() {
+        var obj = document.getElementById("header");
+        var nbr = document.getElementsByName("nbr");
+        var i = nbr[0].value;
+        i++;
+
+        // Append element
+        var el = document.createElement('div');
+        el.setAttribute('id', 'head'+i);
+        el.setAttribute('class', "text-success");
+        el.innerHTML = "<b>Nouvel element "+i+"</b> "+
+        "<Button class='btn btn-danger' type='button' id='btn_"+i+"' onclick='deleteItem(this.id)'>delete x</Button>";
+        obj.appendChild(el);
+
+        // update hidden input 
+        nbr[0].value = i;
+    }
+
+    function deleteItem(o) {
+        if(confirm("Voulez-vous vraiment supprimer cet élément ?")) {
+            var id = o.split('_');
+            var child = document.getElementById("head"+id[1]);
+            var parent = document.getElementById("header");
+            parent.removeChild(child);
+        }
+    }
+</script>

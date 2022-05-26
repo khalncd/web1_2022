@@ -1,0 +1,51 @@
+body {
+	background-color: #cccccc;
+	padding: 0;
+	margin: 0;
+}
+/*
+main {
+ 	padding-top: 15px;
+ 	padding-right: 30px; 
+ 	padding-bottom: 25px; 
+ 	padding-left: 30px;
+ 	background: cyan;
+ 	border: 2px black solid;
+ 	border-radius: 10px;
+ 	margin: 20px 15px 20px 15px;
+}
+header {
+	border-bottom: 2px red solid;
+	padding: 10px;
+	background: rgba(0,0,0,0.7);
+	color: white;
+}
+*/
+a {
+	font-family: Verdana;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+ul li:hover {
+	background-color: whitesmoke;
+}
+ul li:first-child {
+	border-radius: 10px 0 0 10px;
+}
+ul li:last-child {
+	border-radius: 0 10px 10px 0;
+}
+
+ul li:hover > a {
+	font-weight: 700;
+	color: blue;
+}
+
+footer {
+	border-top: 2px orange solid;
+	padding: 10px 15px;
+	background: rgba(0,0,0,0.5);
+	color: white;
+}
